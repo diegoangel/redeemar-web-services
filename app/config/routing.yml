@@ -1,3 +1,13 @@
+app_offers_api:
+    resource: "@AppBundle/Controller/OffersRESTController.php"
+    type:   rest
+    prefix:   /api
+
+app_campaigns_api:
+    resource: "@AppBundle/Controller/CampaignsRESTController.php"
+    type:   rest
+    prefix:   /api
+
 app_companies_api:
     resource: "@AppBundle/Controller/CompaniesRESTController.php"
     type:   rest
