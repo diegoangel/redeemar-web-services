@@ -1,0 +1,38 @@
+AppBundle\Entity\RedeemarProducts:
+    type: entity
+    table: redeemar_products
+    id:
+        redProdId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: red_prod_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        typeProd:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: type_prod
+        amount:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+        price:
+            type: decimal
+            nullable: false
+            precision: 10
+            scale: 0
+    lifecycleCallbacks: {  }

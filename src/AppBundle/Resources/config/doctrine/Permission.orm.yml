@@ -1,0 +1,37 @@
+AppBundle\Entity\Permission:
+    type: entity
+    table: permission
+    indexes:
+        resource_id:
+            columns:
+                - resource_id
+    id:
+        permissionId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: permission_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        permissionName:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+            column: permission_name
+    manyToOne:
+        resource:
+            targetEntity: Resource
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                resource_id:
+                    referencedColumnName: resource_id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

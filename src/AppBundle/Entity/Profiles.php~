@@ -1,0 +1,61 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Profiles
+ *
+ * @ORM\Table(name="profiles")
+ * @ORM\Entity
+ */
+class Profiles
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="prof_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $profId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="first_name", type="string", length=100, nullable=false)
+     */
+    private $firstName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="last_name", type="string", length=100, nullable=false)
+     */
+    private $lastName;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="phone", type="bigint", nullable=false)
+     */
+    private $phone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="blob", nullable=false)
+     */
+    private $image;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pdf", type="blob", nullable=false)
+     */
+    private $pdf;
+
+
+}
+

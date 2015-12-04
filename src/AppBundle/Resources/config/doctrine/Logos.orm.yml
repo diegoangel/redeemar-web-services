@@ -1,0 +1,27 @@
+AppBundle\Entity\Logos:
+    type: entity
+    table: logos
+    id:
+        logoId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: logo_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        compId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: comp_id
+        logo:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

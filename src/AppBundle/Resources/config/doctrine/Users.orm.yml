@@ -1,0 +1,53 @@
+AppBundle\Entity\Users:
+    type: entity
+    table: users
+    indexes:
+        prof_id:
+            columns:
+                - prof_id
+        credit_card_id:
+            columns:
+                - credit_card_id
+    id:
+        userId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: user_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        email:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        password:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        profId:
+            type: integer
+            nullable: true
+            options:
+                unsigned: true
+            column: prof_id
+        creditCardId:
+            type: integer
+            nullable: true
+            options:
+                unsigned: true
+            column: credit_card_id
+        active:
+            type: string
+            nullable: false
+            length: null
+            options:
+                fixed: false
+                default: 'Y'
+    lifecycleCallbacks: {  }

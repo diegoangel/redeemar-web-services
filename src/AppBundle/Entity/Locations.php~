@@ -1,0 +1,96 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Locations
+ *
+ * @ORM\Table(name="locations")
+ * @ORM\Entity
+ */
+class Locations
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="loc_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $locId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="comp_id", type="integer", nullable=false)
+     */
+    private $compId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="comp_name", type="string", length=100, nullable=false)
+     */
+    private $compName;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="location", type="string", length=100, nullable=false)
+     */
+    private $location;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="phone", type="bigint", nullable=true)
+     */
+    private $phone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="city", type="string", length=50, nullable=false)
+     */
+    private $city;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="state", type="string", length=50, nullable=false)
+     */
+    private $state;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="country", type="string", length=50, nullable=false)
+     */
+    private $country;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="latitude", type="bigint", nullable=true)
+     */
+    private $latitude;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="length", type="bigint", nullable=true)
+     */
+    private $length;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="tax_id", type="bigint", nullable=true)
+     */
+    private $taxId;
+
+
+}
+

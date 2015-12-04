@@ -1,0 +1,48 @@
+AppBundle\Entity\Invoices:
+    type: entity
+    table: invoices
+    id:
+        invId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: inv_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        userId:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: user_id
+        offerId:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: offer_id
+        amount:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+        status:
+            type: string
+            nullable: false
+            length: null
+            options:
+                fixed: false
+                default: 'Y'
+        date:
+            type: date
+            nullable: false
+        invDate:
+            type: date
+            nullable: false
+            column: inv_date
+    lifecycleCallbacks: {  }

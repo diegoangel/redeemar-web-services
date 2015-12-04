@@ -24,7 +24,8 @@
         "jms/di-extra-bundle": "^1.6",
         "nelmio/cors-bundle": "^1.4",
         "sensio/generator-bundle": "~2.5",
-        "voryx/restgeneratorbundle": "dev-master"
+        "voryx/restgeneratorbundle": "dev-master",
+        "nelmio/api-doc-bundle": "^2.10"
     },
     "require-dev": {
         "symfony/phpunit-bridge": "~2.7"

@@ -1,0 +1,27 @@
+AppBundle\Entity\Products:
+    type: entity
+    table: products
+    id:
+        prodId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: prod_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        typeProdId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: type_prod_id
+    lifecycleCallbacks: {  }

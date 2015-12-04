@@ -1,0 +1,61 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Users
+ *
+ * @ORM\Table(name="users", indexes={@ORM\Index(name="prof_id", columns={"prof_id"}), @ORM\Index(name="credit_card_id", columns={"credit_card_id"})})
+ * @ORM\Entity
+ */
+class Users
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="user_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $userId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=100, nullable=false)
+     */
+    private $email;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="password", type="string", length=100, nullable=false)
+     */
+    private $password;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="prof_id", type="integer", nullable=true)
+     */
+    private $profId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="credit_card_id", type="integer", nullable=true)
+     */
+    private $creditCardId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="active", type="string", nullable=false)
+     */
+    private $active = 'Y';
+
+
+}
+

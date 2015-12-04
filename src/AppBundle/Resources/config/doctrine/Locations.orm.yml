@@ -1,0 +1,73 @@
+AppBundle\Entity\Locations:
+    type: entity
+    table: locations
+    id:
+        locId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: loc_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        compId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: comp_id
+        compName:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+            column: comp_name
+        location:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        phone:
+            type: bigint
+            nullable: true
+            options:
+                unsigned: false
+        city:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        state:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        country:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+        latitude:
+            type: bigint
+            nullable: true
+            options:
+                unsigned: false
+        length:
+            type: bigint
+            nullable: true
+            options:
+                unsigned: false
+        taxId:
+            type: bigint
+            nullable: true
+            options:
+                unsigned: false
+            column: tax_id
+    lifecycleCallbacks: {  }

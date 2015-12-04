@@ -1,0 +1,50 @@
+AppBundle\Entity\CreditCard:
+    type: entity
+    table: credit_card
+    id:
+        creditCardId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: credit_card_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        cardNumber:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+            column: card_number
+        bank:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        expData:
+            type: date
+            nullable: false
+            column: exp_data
+        securityCode:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: security_code
+        active:
+            type: string
+            nullable: false
+            length: null
+            options:
+                fixed: false
+                default: 'Y'
+    lifecycleCallbacks: {  }

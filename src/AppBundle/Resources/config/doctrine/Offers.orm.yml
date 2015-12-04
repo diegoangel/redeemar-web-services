@@ -1,0 +1,104 @@
+AppBundle\Entity\Offers:
+    type: entity
+    table: offers
+    id:
+        offerId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: offer_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        campId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: camp_id
+        product:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        typeId:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: type_id
+        name:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        image:
+            type: string
+            nullable: true
+            length: 200
+            options:
+                fixed: false
+        finalPrice:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 0
+            column: final_price
+        dollars:
+            type: decimal
+            nullable: true
+            precision: 10
+            scale: 0
+        percentage:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        points:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        redeemars:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        cost:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+        grossMargin:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: gross_margin
+        markup:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        scan:
+            type: blob
+            nullable: true
+            length: null
+            options:
+                fixed: false
+        date:
+            type: date
+            nullable: false
+        active:
+            type: string
+            nullable: false
+            length: null
+            options:
+                fixed: false
+                default: 'Y'
+    lifecycleCallbacks: {  }

@@ -1,0 +1,46 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RolePermission
+ *
+ * @ORM\Table(name="role_permission", indexes={@ORM\Index(name="role_id", columns={"role_id"}), @ORM\Index(name="permission_id", columns={"permission_id"})})
+ * @ORM\Entity
+ */
+class RolePermission
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $id;
+
+    /**
+     * @var \AppBundle\Entity\Role
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Role")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="role_id", referencedColumnName="role_id")
+     * })
+     */
+    private $role;
+
+    /**
+     * @var \AppBundle\Entity\Permission
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Permission")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="permission_id", referencedColumnName="permission_id")
+     * })
+     */
+    private $permission;
+
+
+}
+

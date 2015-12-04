@@ -1,0 +1,29 @@
+AppBundle\Entity\Role:
+    type: entity
+    table: role
+    id:
+        roleId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: role_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        roleName:
+            type: string
+            nullable: false
+            length: 45
+            options:
+                fixed: false
+            column: role_name
+        status:
+            type: string
+            nullable: false
+            length: null
+            options:
+                fixed: false
+                default: Active
+    lifecycleCallbacks: {  }

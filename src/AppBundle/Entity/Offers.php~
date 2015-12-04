@@ -1,0 +1,138 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Offers
+ *
+ * @ORM\Table(name="offers")
+ * @ORM\Entity
+ */
+class Offers
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="offer_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $offerId;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="camp_id", type="integer", nullable=false)
+     */
+    private $campId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="product", type="string", length=100, nullable=true)
+     */
+    private $product;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="type_id", type="integer", nullable=true)
+     */
+    private $typeId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=100, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="image", type="string", length=200, nullable=true)
+     */
+    private $image;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="final_price", type="decimal", precision=10, scale=0, nullable=true)
+     */
+    private $finalPrice;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dollars", type="decimal", precision=10, scale=0, nullable=true)
+     */
+    private $dollars;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="percentage", type="integer", nullable=true)
+     */
+    private $percentage;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="points", type="integer", nullable=true)
+     */
+    private $points;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="redeemars", type="integer", nullable=true)
+     */
+    private $redeemars;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="cost", type="integer", nullable=true)
+     */
+    private $cost;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="gross_margin", type="integer", nullable=true)
+     */
+    private $grossMargin;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="markup", type="string", length=100, nullable=true)
+     */
+    private $markup;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="scan", type="blob", nullable=true)
+     */
+    private $scan;
+
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date", nullable=false)
+     */
+    private $date;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="active", type="string", nullable=false)
+     */
+    private $active = 'Y';
+
+
+}
+

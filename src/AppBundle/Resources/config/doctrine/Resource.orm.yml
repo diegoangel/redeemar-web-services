@@ -1,0 +1,22 @@
+AppBundle\Entity\Resource:
+    type: entity
+    table: resource
+    id:
+        resourceId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: resource_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        resourceName:
+            type: string
+            nullable: false
+            length: 50
+            options:
+                fixed: false
+            column: resource_name
+    lifecycleCallbacks: {  }

@@ -1,0 +1,50 @@
+AppBundle\Entity\Companies:
+    type: entity
+    table: companies
+    id:
+        compId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: comp_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        userId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: user_id
+        name:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        taxId:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+            column: tax_id
+        phone:
+            type: bigint
+            nullable: false
+            options:
+                unsigned: false
+        website:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+        description:
+            type: text
+            nullable: true
+            length: null
+            options:
+                fixed: false
+    lifecycleCallbacks: {  }

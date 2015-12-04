@@ -1,0 +1,53 @@
+AppBundle\Entity\Campaigns:
+    type: entity
+    table: campaigns
+    id:
+        campId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: camp_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        compId:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: comp_id
+        name:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+        startDate:
+            type: date
+            nullable: false
+            column: start_date
+        endDate:
+            type: date
+            nullable: false
+            column: end_date
+        hours:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        location:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+        active:
+            type: string
+            nullable: false
+            length: null
+            options:
+                fixed: false
+                default: 'Y'
+    lifecycleCallbacks: {  }

@@ -1,0 +1,54 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * RedeemarProducts
+ *
+ * @ORM\Table(name="redeemar_products")
+ * @ORM\Entity
+ */
+class RedeemarProducts
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="red_prod_id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
+     */
+    private $redProdId;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=100, nullable=false)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type_prod", type="string", length=100, nullable=false)
+     */
+    private $typeProd;
+
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="amount", type="bigint", nullable=false)
+     */
+    private $amount;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="price", type="decimal", precision=10, scale=0, nullable=false)
+     */
+    private $price;
+
+
+}
+
