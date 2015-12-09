@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -10,8 +11,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="users", indexes={@ORM\Index(name="prof_id", columns={"prof_id"}), @ORM\Index(name="credit_card_id", columns={"credit_card_id"})})
  * @ORM\Entity
  */
-class Users
-{
+class Users implements AdvancedUserInterface {
+
     /**
      * @var integer
      *
@@ -56,15 +57,12 @@ class Users
      */
     private $active = 'Y';
 
-
-
     /**
      * Get userId
      *
      * @return integer
      */
-    public function getUserId()
-    {
+    public function getUserId() {
         return $this->userId;
     }
 
@@ -75,8 +73,7 @@ class Users
      *
      * @return Users
      */
-    public function setEmail($email)
-    {
+    public function setEmail($email) {
         $this->email = $email;
 
         return $this;
@@ -87,8 +84,7 @@ class Users
      *
      * @return string
      */
-    public function getEmail()
-    {
+    public function getEmail() {
         return $this->email;
     }
 
@@ -99,8 +95,7 @@ class Users
      *
      * @return Users
      */
-    public function setPassword($password)
-    {
+    public function setPassword($password) {
         $this->password = $password;
 
         return $this;
@@ -111,8 +106,7 @@ class Users
      *
      * @return string
      */
-    public function getPassword()
-    {
+    public function getPassword() {
         return $this->password;
     }
 
@@ -123,8 +117,7 @@ class Users
      *
      * @return Users
      */
-    public function setProfId($profId)
-    {
+    public function setProfId($profId) {
         $this->profId = $profId;
 
         return $this;
@@ -135,8 +128,7 @@ class Users
      *
      * @return integer
      */
-    public function getProfId()
-    {
+    public function getProfId() {
         return $this->profId;
     }
 
@@ -147,8 +139,7 @@ class Users
      *
      * @return Users
      */
-    public function setCreditCardId($creditCardId)
-    {
+    public function setCreditCardId($creditCardId) {
         $this->creditCardId = $creditCardId;
 
         return $this;
@@ -159,8 +150,7 @@ class Users
      *
      * @return integer
      */
-    public function getCreditCardId()
-    {
+    public function getCreditCardId() {
         return $this->creditCardId;
     }
 
@@ -171,8 +161,7 @@ class Users
      *
      * @return Users
      */
-    public function setActive($active)
-    {
+    public function setActive($active) {
         $this->active = $active;
 
         return $this;
@@ -183,8 +172,79 @@ class Users
      *
      * @return string
      */
-    public function getActive()
-    {
-        return $this->active;
+    public function getActive() {
+        return ($this->active == 'Y') ? true : false;
     }
+
+    /**
+     * Get Roles
+     *
+     * @return array
+     */
+    public function getRoles() {
+        return ['ROLE_USER'];
+    }
+
+    /**
+     * Get salt
+     *
+     * @return void
+     */
+    public function getSalt() {
+        
+    }
+
+    /**
+     * Get Username
+     *
+     * @return void
+     */
+    public function getUsername() {
+        
+    }
+
+    /**
+     * Erase credentials
+     *
+     * @return void
+     */
+    public function eraseCredentials() {
+        
+    }
+
+    public function isAccountNonExpired() {
+        return true;
+    }
+
+    public function isAccountNonLocked() {
+        return true;
+    }
+
+    public function isCredentialsNonExpired() {
+        return true;
+    }
+
+    public function isEnabled() {
+        return $this->getActive();
+    }
+
+    // serialize and unserialize must be updated - see below
+    public function serialize() {
+        return serialize(array(
+            $this->$userId,
+            $this->email,
+            $this->password,
+            $this->isActive
+        ));
+    }
+
+    public function unserialize($serialized) {
+        list (
+                $this->$userId,
+                $this->email,
+                $this->password,
+                $this->isActive
+                ) = unserialize($serialized);
+    }
+
 }
