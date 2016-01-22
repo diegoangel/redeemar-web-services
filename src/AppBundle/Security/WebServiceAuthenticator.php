@@ -10,7 +10,7 @@ use Symfony\Component\Security\Core\Exception\AuthenticationException;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Doctrine\ORM\EntityManager;
 
-class WebServiceuthenticator extends AbstractGuardAuthenticator
+class WebServiceAuthenticator extends AbstractGuardAuthenticator
 {
     private $em;
 
